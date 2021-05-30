@@ -1,0 +1,42 @@
+input.ng-invalid.ng-touched {
+  border: red solid 1px;
+}
+
+.container{
+    background-color:rgb(129, 218, 245);
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    .login-form{
+    display: flex;
+    flex-direction: column;
+        
+        .form-title{
+            align-self:center;
+        }
+
+        .form-label{
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .submit-button{
+            width: 100%;
+                 
+        }
+
+        & > *{
+            margin: 10px 0;
+        }
+    }
+
+}
+
+

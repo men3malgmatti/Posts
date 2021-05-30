@@ -1,5 +1,11 @@
 <router-outlet></router-outlet>
 
-<button routerLink="/dashboard/contacts">Contacts</button>
-<button routerLink="/dashboard/posts">posts</button>
-<button (click)="onLogout()">logout</button>
+<div class="nav">
+    <div class="nav-links">
+        <a routerLink="/dashboard/contacts" routerLinkActive="active-link">Contacts</a>
+        <a routerLink="/dashboard/posts" routerLinkActive="active-link">posts</a>
+    </div>
+    <div>
+        <a class="logout-link" (click)="onLogout()">logout</a>
+    </div>
+</div>

@@ -1,3 +1,25 @@
-<p>login works!</p>
-
-<button (click)="onLogin()">Login</button>
+<div class="container">
+    <form [formGroup]='logInForm' class="login-form">
+        <div class="form-title">LOGIN</div>
+        <div>
+            <div class="form-label">
+                <label>Email</label><label>Required</label>
+            </div>
+            <div>
+                <input placeholder="pat@example.com" formControlName="email">
+            </div>
+        </div>
+        <div>
+            <div class="form-label">
+                <label>Password</label><label>Required</label>
+            </div>
+            <div>
+                <input formControlName="password" placeholder="Password">
+            </div>
+        </div>
+        <div>
+            <button class="submit-button" [disabled]='logInForm.invalid' (click)="onLogin()">
+                Enter</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<h1>Contacts</h1>
+
+<div *ngFor="let contact of contacts">
+    <div class="contact-container">
+        <div class="contact-initials">{{'PH'}}</div>
+        <div>
+            <div>{{contact.name}}</div>
+            <div><span>{{contact.address.street}},</span><span>{{contact.address.city}}</span></div>
+        </div>
+    </div>
+</div>
