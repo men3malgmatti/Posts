@@ -1,3 +1,5 @@
+import { Post } from './posts.model';
+
 export interface Contact {
 
     id: number;
@@ -13,12 +15,18 @@ export interface Contact {
             lat: string,
             lng: string
         }
-    },
-    phone: string,
-    website: string,
+    };
+    phone: string;
+    website: string;
     company: {
         name: string,
         catchPhrase: string,
         bs: string
     }
+}
+
+
+export interface ContactDetails {
+    contact: Contact;
+    posts: Post[];
 }

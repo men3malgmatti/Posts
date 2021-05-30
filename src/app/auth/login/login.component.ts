@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.token = TOKEN;
     this.logInForm = this.fb.group({
-      keepConnection: new FormControl(false),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(4)])
     });

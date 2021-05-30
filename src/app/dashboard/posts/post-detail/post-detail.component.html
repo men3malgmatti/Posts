@@ -1,1 +1,11 @@
-<p>post-detail works!</p>
+<h1>{{testPost.post.title}}</h1>
+<app-contact-card [name]="testPost.contact.name" [street]="testPost.contact.address.street"
+    [city]="testPost.contact.address.city">
+</app-contact-card>
+
+<h3>{{testPost.post.body}}</h3>
+
+<div *ngFor="let comment of testPost.comments">
+
+    <app-post-card [title]="comment.name" [body]="comment.body"></app-post-card>
+</div>

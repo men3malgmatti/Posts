@@ -2,9 +2,7 @@
 
 
 <div *ngFor="let post of posts">
-    <div class="post-container">
-        <div>{{post.title}}</div>
-        <div>{{post.body}}</div>
-    </div>
-
+    <a routerLink="detail/{{post.id}}">
+        <app-post-card [title]="post.title" [body]="post.body"></app-post-card>
+    </a>
 </div>

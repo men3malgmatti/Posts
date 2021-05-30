@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from '../shared/contacts.model';
+import { Contact } from '../../shared/models/contacts.model';
 import { testContact } from '../shared/mock-data'
 
 @Component({

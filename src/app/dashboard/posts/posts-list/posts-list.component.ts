@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../shared/posts.model';
+import { Post } from '../../shared/models/posts.model';
 import { testPosts } from '../shared/posts-mock-data'
 @Component({
   selector: 'app-posts-list',
