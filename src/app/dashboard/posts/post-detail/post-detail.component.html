@@ -1,11 +1,12 @@
-<h1>{{postDetails.post.title}}</h1>
+<h2 class="title">{{postDetails.post.title}}</h2>
 <app-contact-card [name]="postDetails.contact.name" [street]="postDetails.contact.address.street"
     [city]="postDetails.contact.address.city">
 </app-contact-card>
 
-<h3>{{postDetails.post.body}}</h3>
+<p class="post-body">{{postDetails.post.body}}</p>
+<div class="comments-container">
+    <div *ngFor="let comment of postDetails.comments">
 
-<div *ngFor="let comment of postDetails.comments">
-
-    <app-post-card [title]="comment.name" [body]="comment.body"></app-post-card>
+        <app-post-card [title]="comment.name" [body]="comment.body" backgroundColor='white'></app-post-card>
+    </div>
 </div>

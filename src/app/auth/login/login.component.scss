@@ -1,9 +1,8 @@
-input.ng-invalid.ng-touched {
-  border: red solid 1px;
-}
+@import '../../../styles.scss';
+
 
 .container{
-    background-color:rgb(129, 218, 245);
+    background-color: $accent-color;
     position:fixed;
     padding:0;
     margin:0;
@@ -20,12 +19,9 @@ input.ng-invalid.ng-touched {
         
         .form-title{
             align-self:center;
+            color: $primary-color ;
         }
 
-        .form-label{
-            display: flex;
-            justify-content: space-between;
-        }
         
         .submit-button{
             width: 100%;

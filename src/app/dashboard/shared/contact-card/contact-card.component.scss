@@ -1,18 +1,14 @@
+@import '../../../../styles.scss';
+
 .contact-container{
     display: flex;
-    background-color: cyan;
+    background-color:$accent-color;;
     padding: 20px;
     margin-bottom: 10px;
 }
 
-.contact-initials{
-    margin-right: 30px;
-    background-color: blue;
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 50px;
+
+.card-text{
+    color: $primary-color;
 }
+

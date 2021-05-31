@@ -1,15 +1,16 @@
-
-    .login-form{
+.header{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    .contact-form{
     display: flex;
     flex-direction: column;
         
         .form-title{
             align-self:center;
-        }
-
-        .form-label{
-            display: flex;
-            justify-content: space-between;
         }
         
         .submit-button{
@@ -21,3 +22,4 @@
             margin: 10px 0;
         }
     }
+}

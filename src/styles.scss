@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+$primary-color: #2799fa;
+
+$accent-color:#f1f8fe;
+
+a{
+ text-decoration: none;   
+}
+
+.form-input{
+    input{
+    box-sizing: border-box; 
+    width: 100%;
+    padding: 10px 20px;
+    border-color: $primary-color;
+    border-width: 1px;
+    color:$primary-color;    
+    border-style:solid
+}
+
+}
+
+
+.form-label{
+    display: flex;
+    justify-content: space-between;
+
+    label{
+        font-size: small;
+        color: $primary-color;
+    }
+}
+
+input.ng-invalid.ng-touched {
+  border: red solid 1px;
+}

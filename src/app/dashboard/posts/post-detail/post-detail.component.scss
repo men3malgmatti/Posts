@@ -1,0 +1,15 @@
+@import '../../../../styles.scss';
+
+
+.comments-container{
+        background-color: $accent-color;
+        padding: 20px 30px;
+}
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    color: $primary-color;
+}
+.post-body{
+    color: $primary-color;
+}

@@ -1,8 +1,8 @@
-
+@import '../../styles.scss';
 
 .nav{
   display: flex;
-  background-color: blue;
+  background-color: $primary-color;
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -29,7 +29,7 @@
 
   .logout-link{
     background-color: yellow;
-    color: blue ;
+    color:$primary-color ;
     cursor: pointer;
   }
   

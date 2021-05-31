@@ -1,7 +1,7 @@
 <div class="contact-container">
-    <div class="contact-initials">{{'PH'}}</div>
+    <app-avatar [fullName]="name" size='50px'></app-avatar>
     <div>
-        <div>{{name}}</div>
-        <div><span>{{street}},</span><span>{{city}}</span></div>
+        <div class="card-text">{{name}}</div>
+        <div><span class="card-text">{{street}},</span><span class="card-text">{{city}}</span></div>
     </div>
 </div>

@@ -5,7 +5,7 @@
             <div class="form-label">
                 <label>Email</label><label>Required</label>
             </div>
-            <div>
+            <div class="form-input">
                 <input placeholder="pat@example.com" formControlName="email">
             </div>
         </div>
@@ -13,13 +13,14 @@
             <div class="form-label">
                 <label>Password</label><label>Required</label>
             </div>
-            <div>
+            <div class="form-input">
                 <input formControlName="password" placeholder="Password">
             </div>
         </div>
         <div>
-            <button class="submit-button" [disabled]='logInForm.invalid' (click)="onLogin()">
-                Enter</button>
+            <app-form-button width="100%" title="enter" (click)="onLogin()" [disabled]="logInForm.invalid">
+            </app-form-button>
+
         </div>
     </form>
 </div>
