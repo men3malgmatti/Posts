@@ -1,42 +1,47 @@
-<div class="header">
-    <app-avatar size='80px' [fullName]="contactDetails.contact.name"></app-avatar>
-</div>
-<div class="container">
-    <form [formGroup]='contactForm' class="contact-form">
+<div *ngIf="!isLoading">
+    <div class="header">
+        <app-avatar size='80px' [fullName]="contactDetails.contact.name"></app-avatar>
+    </div>
+    <div class="container">
+        <form [formGroup]='contactForm' class="contact-form">
 
-        <div>
-            <div class="form-label">
-                <label>Full name</label><label>Required</label>
+            <div>
+                <div class="form-label">
+                    <label>Full name</label><label>Required</label>
+                </div>
+                <div class="form-input">
+                    <input placeholder="full name" formControlName="fullName">
+                </div>
             </div>
-            <div class="form-input">
-                <input placeholder="full name" formControlName="fullName">
+            <div>
+                <div class="form-label">
+                    <label>Email</label><label>Required</label>
+                </div>
+                <div class="form-input">
+                    <input formControlName="email" placeholder="email">
+                </div>
             </div>
-        </div>
-        <div>
-            <div class="form-label">
-                <label>Email</label><label>Required</label>
+            <div>
+                <div class="form-label">
+                    <label>Company name</label><label>Required</label>
+                </div>
+                <div class="form-input">
+                    <input formControlName="companyName" placeholder="company name">
+                </div>
             </div>
-            <div class="form-input">
-                <input formControlName="email" placeholder="email">
-            </div>
-        </div>
-        <div>
-            <div class="form-label">
-                <label>Company name</label><label>Required</label>
-            </div>
-            <div class="form-input">
-                <input formControlName="companyName" placeholder="company name">
-            </div>
-        </div>
-        <div>
+            <div>
 
-            <app-form-button width="100%" title="save" [disabled]="contactForm.invalid" (click)="onSubmit()">
-            </app-form-button>
-        </div>
-    </form>
+                <app-form-button width="100%" title="save" [disabled]="contactForm.invalid" (click)="onSubmit()">
+                </app-form-button>
+            </div>
+        </form>
 
-</div>
+    </div>
 
-<div *ngFor="let post of contactDetails.posts">
-    <app-post-card [title]="post.title" [body]="post.body"></app-post-card>
+    <div *ngFor="let post of contactDetails.posts">
+        <a routerLink="/dashboard/posts/detail/{{post.id}}">
+            <app-post-card [title]="post.title" [body]="post.body"></app-post-card>
+        </a>
+    </div>
+
 </div>

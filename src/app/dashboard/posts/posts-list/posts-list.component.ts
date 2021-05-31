@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../shared/models/posts.model';
-import { testPosts } from '../shared/posts-mock-data'
 import { PostsService } from '../../../core/services/posts.service'
 
 @Component({
@@ -16,7 +15,7 @@ export class PostsListComponent implements OnInit {
   public posts: Post[] = [];
 
   ngOnInit(): void {
-    this.posts = testPosts
+
     this.postsService.getPosts().subscribe(data => {
       data.forEach(post => {
         this.posts.push(post)
