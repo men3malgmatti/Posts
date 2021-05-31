@@ -27,14 +27,13 @@
             </div>
         </div>
         <div>
-            <button class="submit-button">
+            <button class="submit-button" (click)="onSubmit()">
                 Save</button>
         </div>
     </form>
 
 </div>
 
-
-<div *ngFor="let post of testContactDetails.posts">
+<div *ngFor="let post of contactDetails.posts">
     <app-post-card [title]="post.title" [body]="post.body"></app-post-card>
 </div>

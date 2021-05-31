@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ContactDetails } from '../../shared/models/contacts.model';
 import { testContactDetails } from '../shared/mock-data';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { ContactsService } from 'src/app/core/services/contacts.service';
+import { PostsService } from 'src/app/core/services/posts.service';
 
 @Component({
   selector: 'app-contact-detail',
@@ -11,30 +13,45 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class ContactDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private fb: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private fb: FormBuilder,
+    private contactService: ContactsService, private postsService: PostsService) { }
 
 
-  public testContactDetails: ContactDetails;
+  public contactDetails: ContactDetails;
   public contactForm: FormGroup
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id);
-    this.testContactDetails = testContactDetails;
-    console.log(this.testContactDetails);
+
+    const id = this.route.snapshot.paramMap.get('id');
+
     this.contactForm = this.fb.group({
       email: new FormControl('', [Validators.required, Validators.email]),
       fullName: new FormControl('', [Validators.required]),
       companyName: new FormControl('', [Validators.required])
     });
 
-    this.contactForm.setValue({
-      fullName: this.testContactDetails.contact.name,
-      email: this.testContactDetails.contact.email,
-      companyName: this.testContactDetails.contact.company.name
+
+    this.contactService.getContact(id).subscribe(data => {
+
+      this.contactDetails = { contact: { ...data }, posts: [] }
+      this.contactForm.setValue({
+        fullName: this.contactDetails.contact.name,
+        email: this.contactDetails.contact.email,
+        companyName: this.contactDetails.contact.company.name
+      })
+    }
+    );
+    this.postsService.getContactPosts(id).subscribe(data => {
+      this.contactDetails = { ...this.contactDetails, posts: [...data] }
     })
+
   }
 
+  onSubmit() {
+    this.contactService.updateContact(this.contactDetails.contact).subscribe(res => {
+      console.log(res);
 
+    })
+  }
 
 }

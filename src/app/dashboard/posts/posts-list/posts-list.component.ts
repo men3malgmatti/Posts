@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../shared/models/posts.model';
 import { testPosts } from '../shared/posts-mock-data'
+import { PostsService } from '../../../core/services/posts.service'
 @Component({
   selector: 'app-posts-list',
   templateUrl: './posts-list.component.html',
@@ -8,13 +9,18 @@ import { testPosts } from '../shared/posts-mock-data'
 })
 export class PostsListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postsService: PostsService) { }
 
 
   public posts: Post[] = [];
 
   ngOnInit(): void {
     this.posts = testPosts
+    this.postsService.getPosts().subscribe(data => {
+      data.forEach(post => {
+        this.posts.push(post)
+      })
+    })
   }
 
 }
